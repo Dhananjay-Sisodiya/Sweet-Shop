@@ -4,6 +4,8 @@ const Sweet = require('../models/Sweet');
 
 exports.createSweet = async (req, res) => {
   try {
+     console.log("REQ BODY:", req.body);
+  console.log("REQ USER:", req.user);
     const { name, category, price, quantity } = req.body;
     const sweet = new Sweet({ name, category, price, quantity });
     await sweet.save();

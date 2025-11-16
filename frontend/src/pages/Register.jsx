@@ -6,14 +6,15 @@ export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("user"); // ✔ added role
 
   const navigate = useNavigate();
 
   const handleRegister = async () => {
     try {
-      await api.post("/auth/register", { name, email, password });
+      await api.post("/auth/register", { name, email, password, role });
       alert("Registration successful");
-      navigate("/login"); // ✔️ redirect to login after success
+      navigate("/login");
     } catch (err) {
       alert("Registration failed");
       console.error(err);
@@ -45,9 +46,14 @@ export default function Register() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
+      {/* ✔ Role selector */}
+      <select value={role} onChange={(e) => setRole(e.target.value)}>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+
       <button onClick={handleRegister}>Register</button>
 
-      {/* ✔️ Login button */}
       <p style={{ marginTop: "10px" }}>
         Already have an account?{" "}
         <button

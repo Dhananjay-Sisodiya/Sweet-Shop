@@ -10,6 +10,7 @@ app.use(cors({
   origin: "*",        // allow all frontend URLs
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type,Authorization",
+  credentials: false,
 }));
 
 app.use(express.json());
