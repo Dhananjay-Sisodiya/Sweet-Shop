@@ -132,13 +132,20 @@ All screenshots are stored in:
 frontend/screenshots/
 ```
 
-You can include them here using markdown:
+### Login
+![Login](frontend/screenshots/login.png)
 
-Example:
+### Register
+![Register](frontend/screenshots/register.png)
 
-```
-![Dashboard](frontend/screenshots/admin-dashboard.png)
-```
+### Admin Dashboard
+![Dashboard](frontend/screenshots/admin-dash.png)
+
+### User Dashboard
+![Dashboard](frontend/screenshots/user-dash.png)
+
+### Add/Update Sweet
+![Add Sweet](frontend/screenshots/update.png)
 
 ---
 
